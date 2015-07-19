@@ -306,6 +306,17 @@ function vicious.call(myw, format, warg)
 end
 -- }}}
 
+-- {{{ Change the timer of a registered widget.
+function vicious.change_timer(reg, timer_)
+  if not reg then return end
+  if timer_ ~= reg.timer then
+    vicious.unregister(nil, true, reg)
+    reg.timer = timer_
+    regregister(reg)
+  end
+end
+-- }}}
+
 return vicious
 
 -- }}}
